@@ -15,5 +15,5 @@ it('renders without crashing', () => {
 
 it('shows a list of apartments', () => {
     const component = mount(<ApartmentIndex />);
-    expect(component.find('Apartment').length).toBeGreaterThanOrEqual(1);
+    expect(component.find(Apartment).length).toBeGreaterThanOrEqual(1);
 })
