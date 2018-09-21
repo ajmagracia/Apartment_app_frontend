@@ -13,6 +13,7 @@ let apartment = {
     state: "state",
     country: "country"
 }
+
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
