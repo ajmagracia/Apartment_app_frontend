@@ -44,3 +44,15 @@
 .form-submit:hover{
   opacity: 0.6;
 }
+
+.form-navbutton{
+  height: 35px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  transition: 0.3s opacity ease;
+  cursor: pointer;
+}
+.form-navbutton:hover{
+  opacity: 0.6;
+}
