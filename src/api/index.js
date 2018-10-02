@@ -24,10 +24,11 @@ let getApartment = function(id) {
 }
 
 let createApartment = function(apartment) {
+  console.log(apartment)
     return fetch(BASE + '/apartments', {
-        body: JSON.stringify(apartment),  // <- we need to stringify the json for fetch
+        body: JSON.stringify({apartment: apartment}),  // <- we need to stringify the json for fetch
         headers: {  // <- We specify that we're sending JSON, and expect JSON back
-            'Content-Type': 'appliapartmention/json'
+            'Content-Type': 'application/json'
         },
         method: "POST"  // <- Here's our verb, so the correct endpoint is invoked on the server
     })

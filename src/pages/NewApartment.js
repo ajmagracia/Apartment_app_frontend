@@ -18,11 +18,10 @@ class NewApartment extends Component {
 				country: "",
 				manager_name: "",
 				phone_number: "",
-				contact_hours: "",
-                user_id: ""
+				contact_hours: ""
 			}
 		}
-        this.state.apartment.user_id = this.auth.getUserId()
+        // this.state.apartment.user_id = this.auth.getUserId()
 	}
 
 	handleChange(e){
@@ -33,7 +32,10 @@ class NewApartment extends Component {
 
 	handleFormSubmit(e){
 		e.preventDefault()
-		createApartment(this.state)
+		let { apartment } = this.state
+		apartment.user_id = this.props.userId
+		console.log(apartment)
+		createApartment(apartment)
 		.then(res =>{
 			console.log(this.props.history)
 			this.props.history.replace('/apartments')
@@ -51,9 +53,11 @@ class NewApartment extends Component {
     		country,
     		manager_name,
     		phone_number,
-    		contact_hours,
-            user_id
+    		contact_hours
         } = this.state.apartment
+		let {
+		  userId
+		} = this.props
 		return (
 			<div className="center">
 				<div className="card">

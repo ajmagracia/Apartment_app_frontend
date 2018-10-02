@@ -9,7 +9,8 @@ class ApartmentIndex extends Component {
             apartments: []
         }
     }
-    componentWillMount() {
+
+    componentDidMount() {
         getApartments()
         .then(APIapartments => {
             this.setState({
@@ -22,7 +23,7 @@ class ApartmentIndex extends Component {
         let apartmentList
         let { apartments } = this.state
         if(apartments.length === 0 || apartments === "undefined") {
-            apartmentList = "No recipes found"
+            apartmentList = "No apartments found"
         } else {
             apartmentList = apartments.map(apartment=> {
                 return(<Apartment key={apartment.id} apartment={apartment} />)
